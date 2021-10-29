@@ -10,7 +10,7 @@ abstract class CustomSnackBar{
 
   static SnackBar _snackBar({required String message}){
     return SnackBar(
-      content: Text("$message"),
+      content: Text(message),
     );
   }
 }
