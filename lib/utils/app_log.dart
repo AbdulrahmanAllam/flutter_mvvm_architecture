@@ -2,7 +2,7 @@
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
-abstract class Log {
+abstract class AppLog {
   static final Logger _logger = Logger();
 
   static debug(String message) {
@@ -22,10 +22,10 @@ abstract class Log {
   }
 
   static void httpSuccess({required String requestName, required http.Response response}){
-    Log.debug("start ($requestName) request\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName) request");
+    AppLog.debug("start ($requestName) request\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName) request");
   }
 
   static void httpError({required String requestName, required http.Response response}){
-    Log.error("start ($requestName) request\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName) request");
+    AppLog.error("start ($requestName) request\nrequest information : (${response.request})\nresponse code : (${response.statusCode})\nresponse : (${response.body})\nend ($requestName) request");
   }
 }
